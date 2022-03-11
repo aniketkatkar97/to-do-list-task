@@ -41,5 +41,8 @@ const handleDelete = (i) => {
 }
 
 const handleClear = () => {
-    
+    div.removeChild(list);
+    let newList = document.createElement('ul');
+    newList.id = 'list';
+    div.appendChild(newList)
 }
