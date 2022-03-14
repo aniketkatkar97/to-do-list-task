@@ -8,12 +8,17 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" id="input" />
-    <button onclick="addTask()">ADD</button>
-    <div id="result">
-      <ul id="list"></ul>
+    <div class="container">
+      <h1>To Do List</h1>
+      <div>
+        <input type="text" id="input" oninput="addChangeHandler(value)" />
+        <button onclick="addTask()" id="add" disabled>ADD</button>
+      </div>
+      <div id="result" class="display">
+        <ul id="list"></ul>
+      </div>
+      <button onclick="handleClear()" id="clear-button" disabled>clear</button>
     </div>
-    <button onclick="handleClear()">clear</button>
     <script src="./practice.js"></script>
   </body>
 </html>

@@ -1,3 +1,36 @@
-.details:checked + .label{
-    text-decoration-line: line-through;
-  }
+.display {
+  border: 0.2rem black solid;
+  width: 40%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.details:checked + .label {
+  text-decoration-line: line-through;
+}
+
+list_items {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  /* background-color: aquamarine; */
+  border: 0.4rem black double;
+}
+
+.delete-button {
+  background-color: rgb(226, 3, 3);
+  color: white;
+  border: 0.3rem white solid;
+  border-radius: 2rem;
+}
