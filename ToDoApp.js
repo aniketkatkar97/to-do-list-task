@@ -1,17 +1,17 @@
-//Importing all the common nodes needed throughout the code
+// Importing all the common nodes needed throughout the code
 const input = document.getElementById("input");
 const taskListDiv = document.getElementById("task-list-div");
 const addBtn = document.getElementById("add-button");
 const clearBtn = document.getElementById("clear-button");
 
-//Function to handle disable attribute of add button
+// Function to handle disable attribute of add button
 const onTextChange = (value) => {
   value
     ? addBtn.removeAttribute("disabled")
     : addBtn.setAttribute("disabled", "true");
 };
 
-//Functionality for adding a task
+// Functionality for adding a task
 const addTask = () => {
   // Importing all required nodes
   const listOfTasks = document.getElementById("list");
@@ -21,7 +21,7 @@ const addTask = () => {
   const labelForCheckBox = document.createElement("label");
   const deleteButton = document.createElement("button");
 
-  //Detailing the checkbox and its label used for displaying added task
+  // Detailing the checkbox and its label used for displaying added task
   newCheckBox.type = "checkbox";
   newCheckBox.value = input.value;
   const inputId = `checkbox${input.value}${numOfTasks}`;
@@ -37,13 +37,13 @@ const addTask = () => {
     "handleEdit(id, innerHTML); return false"
   );
 
-  //Detailing delete button provided for each task
+  // Detailing delete button provided for each task
   deleteButton.id = `button ${numOfTasks}${input.value}`;
   deleteButton.innerHTML = "X";
   deleteButton.setAttribute("onclick", "handleDelete(id)");
   deleteButton.classList.add("delete-button");
 
-  //Assembling delete button and task details in li item
+  // Assembling delete button and task details in li item
   newTask.appendChild(deleteButton);
   newTask.appendChild(newCheckBox);
   newTask.appendChild(labelForCheckBox);
@@ -52,14 +52,14 @@ const addTask = () => {
   input.value = "";
   addBtn.setAttribute("disabled", "true");
 
-  //For removing the disabled attribute of clear button
+  // For removing the disabled attribute of clear button
   clearBtn.removeAttribute("disabled");
 
-  //Focusing the input for adding next task
+  // Focusing the input for adding next task
   input.focus();
 };
 
-//Functionalities for delete button provided for each task
+// Functionalities for delete button provided for each task
 const handleDelete = (i) => {
   const listOfTasks = document.getElementById("list");
   const taskId = i.split(" ").slice(1).join(" ");
@@ -70,7 +70,7 @@ const handleDelete = (i) => {
   }
 };
 
-//Functionalities for clear button which clears all the task at one click
+// Functionalities for clear button which clears all the task at one click
 const handleClear = () => {
   taskListDiv.removeChild(list);
   const newList = document.createElement("ul");
@@ -79,7 +79,7 @@ const handleClear = () => {
   clearBtn.setAttribute("disabled", "true");
 };
 
-//Functionalities for editing the task
+// Functionalities for editing the task
 const handleEdit = (id, innerHTML) => {
   const newText = prompt("Enter the details", innerHTML);
   const taskLabel = document.getElementById(id);

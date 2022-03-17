@@ -20,7 +20,6 @@ li {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  /* background-color: aquamarine; */
   border: 0.4rem black double;
 }
 
