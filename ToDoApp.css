@@ -1,16 +1,12 @@
-.display {
+.tasks-list {
   border: 0.2rem black solid;
   width: 40%;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.details:checked + .label {
+.task-checkbox:checked + .label {
   text-decoration-line: line-through;
-}
-
-.list_items {
-  display: flex;
 }
 
 li {

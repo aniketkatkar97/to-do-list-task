@@ -1,12 +1,12 @@
 //Importing all the common nodes needed throughout the code
 const input = document.getElementById("input");
 const taskListDiv = document.getElementById("task-list-div");
-const addBtn = document.getElementById("add");
+const addBtn = document.getElementById("add-button");
 const clearBtn = document.getElementById("clear-button");
 
 //Function to handle disable attribute of add button
-const addChangeHandler = (e) => {
-  e
+const onTextChange = (value) => {
+  value
     ? addBtn.removeAttribute("disabled")
     : addBtn.setAttribute("disabled", "true");
 };
@@ -26,7 +26,7 @@ const addTask = () => {
   newCheckBox.value = input.value;
   const inputId = `checkbox${input.value}${numOfTasks}`;
   newCheckBox.id = inputId;
-  newCheckBox.classList.add("details");
+  newCheckBox.classList.add("task-checkbox");
 
   labelForCheckBox.htmlFor = inputId;
   labelForCheckBox.innerHTML = input.value;
@@ -48,7 +48,6 @@ const addTask = () => {
   newTask.appendChild(newCheckBox);
   newTask.appendChild(labelForCheckBox);
   newTask.id = `${numOfTasks}${input.value}`;
-  newTask.classList.add("list_items");
   listOfTasks.appendChild(newTask);
   input.value = "";
   addBtn.setAttribute("disabled", "true");
